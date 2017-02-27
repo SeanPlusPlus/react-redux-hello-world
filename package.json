@@ -1,0 +1,25 @@
+{
+  "name": "redux-cheat-sheet",
+  "version": "1.0.0",
+  "description": "redux cheat sheet example",
+  "main": "index.js",
+  "author": "SeanPlusPlus",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  }
+}
