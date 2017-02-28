@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, bindActionCreators } from 'redux';
-import Hello from './hello';
-import World from './world';
+import Navigation from './navigation';
 import { reducers, actionLogger } from './reducers';
 
 const middleware = applyMiddleware(actionLogger);
@@ -16,40 +15,40 @@ const changeName = () => { return { type: 'CHANGE_NAME' } };
 const hello = () => { return { type: 'SAY_HELLO' } };
 const goodbye = () => {return { type: 'SAY_GOODBYE' } };
 
-const Hiya = (props) => (
+const Header = (props) => (
   <div>
     <h1>Hiya</h1>
-    <div
+    <button
+      className="btn btn-default"
       onMouseOver={props.hello}
       onMouseOut={props.goodbye}
       onClick={props.changeName}
     >
-    {props.greeting}{props.name}
-    </div>
+      {props.greeting}{props.name}
+    </button>
     <hr />
   </div>
 )
 
-class HelloWorld extends React.Component {
+class App extends React.Component {
   render() {
     console.log(store.getState());
     return (
       <div>
-        <Hiya
+        <Navigation />
+        <Header
           greeting={store.getState().greeting}
           name={store.getState().name}
           {...bindActionCreators({changeName, hello, goodbye},
                                   store.dispatch)}
         />
-        <Hello />
-        <World />
       </div>
     )
   }
 }
 
 const render = () => {
-  ReactDOM.render(<HelloWorld />, document.getElementById('helloworld'));
+  ReactDOM.render(<App />, document.getElementById('helloworld'));
 }
 
 render();
