@@ -16,17 +16,21 @@ const hello = () => { return { type: 'SAY_HELLO' } };
 const goodbye = () => {return { type: 'SAY_GOODBYE' } };
 
 const Header = (props) => (
-  <div>
-    <h1>Hiya</h1>
-    <button
-      className="btn btn-default"
-      onMouseOver={props.hello}
-      onMouseOut={props.goodbye}
-      onClick={props.changeName}
-    >
-      {props.greeting}{props.name}
-    </button>
-    <hr />
+  <div className="container">
+    <div className="row">
+      <div className="col-md-12">
+        <h1>Hiya</h1>
+        <button
+          className="btn btn-default"
+          onMouseOver={props.hello}
+          onMouseOut={props.goodbye}
+          onClick={props.changeName}
+        >
+          {props.greeting}{props.name}
+        </button>
+        <hr />
+      </div>
+    </div>
   </div>
 )
 
