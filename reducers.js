@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import createLogger from 'redux-logger';
 
 const greetingReducer = (state = '', action) => {
   switch (action.type) {
@@ -18,14 +19,11 @@ const nameReducer = (state = 'Dude', action) => {
   return state;
 }
 
-const actionLogger = ({dispatch, getState}) => (next) => (action) => {
-  console.log(action);
-  return next(action)
-};
+const logger = createLogger();
 
 const reducers = combineReducers({
   greeting: greetingReducer,
   name: nameReducer,
 });
 
-export { reducers, actionLogger };
+export { reducers, logger };

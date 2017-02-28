@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, bindActionCreators } from 'redux';
 import Navigation from './navigation';
-import { reducers, actionLogger } from './reducers';
+import { reducers, logger } from './reducers';
 
-const middleware = applyMiddleware(actionLogger);
+const middleware = applyMiddleware(logger);
 const store = createStore(
   reducers,
   { greeting: '(Roll over me) '},
