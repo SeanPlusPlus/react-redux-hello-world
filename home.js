@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = (props) => (
+const Home = (props) => (
   <div className="container">
     <div className="row">
       <div className="col-md-12">
@@ -20,4 +20,4 @@ const Header = (props) => (
   </div>
 )
 
-export default Header;
+export default Home;

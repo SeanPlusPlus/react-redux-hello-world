@@ -4,7 +4,7 @@ import { createStore, applyMiddleware, bindActionCreators } from 'redux';
 import { reducers, logger } from './reducers';
 import { changeName, hello, goodbye } from './actions';
 import Navigation from './navigation';
-import Header from './header';
+import Home from './home';
 
 const middleware = applyMiddleware(logger);
 const store = createStore(
@@ -18,7 +18,7 @@ class App extends React.Component {
     return (
       <div>
         <Navigation />
-        <Header
+        <Home
           greeting={store.getState().greeting}
           name={store.getState().name}
           {...bindActionCreators({changeName, hello, goodbye},
