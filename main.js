@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, bindActionCreators } from 'redux';
-import Navigation from './navigation';
 import { reducers, logger } from './reducers';
+import Navigation from './navigation';
+import Header from './header';
 
 const middleware = applyMiddleware(logger);
 const store = createStore(
@@ -11,33 +12,20 @@ const store = createStore(
   middleware
 );
 
-const changeName = () => { return { type: 'CHANGE_NAME' } };
-const hello = () => { return { type: 'SAY_HELLO' } };
-const goodbye = () => {return { type: 'SAY_GOODBYE' } };
+const changeName = () => {
+  return { type: 'CHANGE_NAME' }
+};
 
-const Header = (props) => (
-  <div className="container">
-    <div className="row">
-      <div className="col-md-12">
-        <div className="jumbotron">
-        <h1>Hiya</h1>
-          <button
-            className="btn btn-default"
-            onMouseOver={props.hello}
-            onMouseOut={props.goodbye}
-            onClick={props.changeName}
-          >
-            {props.greeting}{props.name}
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-)
+const hello = () => {
+  return { type: 'SAY_HELLO' }
+};
+
+const goodbye = () => {
+  return { type: 'SAY_GOODBYE' }
+};
 
 class App extends React.Component {
   render() {
-    console.log(store.getState());
     return (
       <div>
         <Navigation />
