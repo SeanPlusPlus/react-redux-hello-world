@@ -53,7 +53,7 @@ class App extends React.Component {
 }
 
 const render = () => {
-  ReactDOM.render(<App />, document.getElementById('helloworld'));
+  ReactDOM.render(<App />, document.getElementById('app'));
 }
 
 render();
