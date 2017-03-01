@@ -1,6 +1,25 @@
-const changeName = () => {
+import fetch from 'isomorphic-fetch';
+
+const requestName = () => {
   return {
-    type: 'CHANGE_NAME',
+    type: 'REQUEST_NAME',
+  }
+};
+
+const fetchName = () => {
+  return dispatch => {
+    dispatch(requestName());
+    const url = 'http://localhost:3000/'
+    return fetch(url)
+      .then(response => response.json())
+      .then(json => dispatch(receiveName(json)))
+  }
+}
+
+const receiveName = (json) => {
+  return {
+    type: 'RECEIVE_NAME',
+    payload: json.name,
   }
 };
 
@@ -16,4 +35,4 @@ const goodbye = () => {
   }
 };
 
-export { changeName, hello, goodbye };
+export { requestName, fetchName, hello, goodbye };

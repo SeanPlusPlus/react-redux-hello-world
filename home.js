@@ -10,7 +10,7 @@ const Home = (props) => (
             className="btn btn-default"
             onMouseOver={props.hello}
             onMouseOut={props.goodbye}
-            onClick={props.changeName}
+            onClick={props.fetchName}
           >
             {props.greeting}{props.name}
           </button>

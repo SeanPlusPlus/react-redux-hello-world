@@ -13,8 +13,10 @@ const greetingReducer = (state = '', action) => {
 
 const nameReducer = (state = 'Dude', action) => {
   switch (action.type) {
-    case 'CHANGE_NAME':
-      return 'Yo';
+    case 'REQUEST_NAME':
+      return '...requesting ';
+    case 'RECEIVE_NAME':
+      return action.payload;
   }
   return state;
 }

@@ -6,16 +6,22 @@
   "author": "SeanPlusPlus",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors"
+    "start": "webpack-dev-server --progress --colors",
+    "api": "nodemon server.js --exec babel-node --presets es2015,stage-2"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "cors": "^2.8.1",
+    "express": "^4.14.1",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
     "react-dom": "^15.4.2",
     "reactstrap": "^4.2.0",
     "redux": "^3.6.0",
-    "redux-logger": "^2.8.1"
+    "redux-logger": "^2.8.1",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
