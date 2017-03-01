@@ -2,8 +2,6 @@ var path = require('path');
 var webpack = require('webpack');
 var PROD = JSON.parse(process.env.PROD_ENV || '0');
 
-console.log(__dirname);
-
 module.exports = {
   entry: './main.js',
   output: {

@@ -13,21 +13,18 @@ const store = createStore(
   middleware
 );
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Navigation />
-        <Home
-          greeting={store.getState().greeting}
-          name={store.getState().name}
-          {...bindActionCreators({changeName, hello, goodbye},
-                                  store.dispatch)}
-        />
-      </div>
-    )
-  }
-}
+const App = () => (
+  <div>
+    <Navigation />
+    <Home
+      greeting={store.getState().greeting}
+      name={store.getState().name}
+      {...bindActionCreators(
+        {changeName, hello, goodbye}, store.dispatch
+      )}
+    />
+  </div>
+)
 
 const render = () => {
   ReactDOM.render(<App />, document.getElementById('app'));
