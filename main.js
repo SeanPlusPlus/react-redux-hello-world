@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, bindActionCreators } from 'redux';
 import { reducers, logger } from './reducers';
+import { changeName, hello, goodbye } from './actions';
 import Navigation from './navigation';
 import Header from './header';
 
@@ -11,18 +12,6 @@ const store = createStore(
   { greeting: '(Roll over me) '},
   middleware
 );
-
-const changeName = () => {
-  return { type: 'CHANGE_NAME' }
-};
-
-const hello = () => {
-  return { type: 'SAY_HELLO' }
-};
-
-const goodbye = () => {
-  return { type: 'SAY_GOODBYE' }
-};
 
 class App extends React.Component {
   render() {
