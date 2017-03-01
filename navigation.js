@@ -5,18 +5,14 @@ class Navigation extends React.Component {
   render() {
     return (
       <div>
-        <Nav>
+        <Nav className="navbar navbar-light bg-faded rounded navbar-toggleable-md fixed-top">
           <NavItem>
-            <NavLink href="#">Link</NavLink>
+            <NavLink href="#">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Link</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="#">Another Link</NavLink>
+            <NavLink href="#">About</NavLink>
           </NavItem>
         </Nav>
-        <hr />
       </div>
     )
   }
